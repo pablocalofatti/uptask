@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header
+    body.login
+        .contenedor-formulario
+            h1 Create an account
+
+            if locals.messages
+                .alertas
+                    each categories in Object.keys(locals.messages)
+                        each err in messages[categories]
+                            .alerta(class=`${categories}`)
+                                p= err 
+              
+            form#form.caja.caja-login(method="POST" action="/create-account")
+                .campo
+                    label(for="text") Name
+                    input(type="text" name="name" placeholder="Your Name" value= name )  
+                .campo
+                    label(for="text") Last Name:
+                    input(type="text" name="lastname" placeholder="Your Last Name" value= lastname )
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" name="email" placeholder="Your Email" value= email required)  
+                .campo
+                    label(for="password") Password:
+                    input(type="password" name="password" placeholder="Your Password" value= password required)
+                .campo.enviar
+                    input.boton(type="submit" value=" Create Account")
+                .campo
+                    a(href="/start-session") Back to Start Session
+        script(src="/dist/bundle.js")   

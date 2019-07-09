@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .contenido-principal
+        h1 #{pageName} - #{project.name}
+
+        form.agregar-tarea(action=`/projects/${project.url}` method="POST")
+            .campo  
+                label(for="task") Task:
+                input.nombre-tarea(type="text" name="task" placeholder="Task Name")
+            .campo.enviar
+                input.boton.nueva-tarea(type="submit" value="Add")
+        .listado-pendientes
+            ul
+              if tasks.length
+                each task in tasks
+                    li.task(data-task=task.id)
+                        p= task.task
+                        .acciones
+                            if task.state
+                                i.far.fa-check-circle.completo
+                            else
+                                i.far.fa-check-circle
+                                i.fas.fa-trash
+              else 
+                p There are no tasks in this project
+        //Project advances
+        .avance 
+            h2 Project Progress
+            #progress-bar.barra-avance
+                #percentage.porcentaje
+        //actions
+        .contenedor-acciones    
+            a(href=`/project/edit/${project.id}` class="boton") Edit Project
+            button#delete-project(data-project-url=project.url type="button" class="boton eliminar") Delete Project
+            

@@ -1,0 +1,43 @@
+{
+    "name": "uptask",
+    "version": "1.0.0",
+    "description": "To do list with node and MVC",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon ./index.js",
+        "start": "concurrently \"npm run dev\" \"npm run watch\"",
+        "watch": "webpack --w --mode development"
+    },
+    "author": "Pablo Calofatti",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "axios": "^0.19.0",
+        "babel-loader": "^8.0.6",
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.19.0",
+        "concurrently": "^4.1.1",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.17.1",
+        "express-session": "^1.16.2",
+        "express-validator": "^6.1.1",
+        "html-to-text": "^5.1.1",
+        "juice": "^5.2.0",
+        "mysql2": "^1.6.5",
+        "nodemailer": "^6.2.1",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "pug": "^2.0.4",
+        "sequelize": "^5.8.12",
+        "shortid": "^2.2.14",
+        "slug": "^1.1.0",
+        "sweetalert2": "^8.13.0",
+        "webpack": "^4.35.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.1",
+        "webpack-cli": "^3.3.5"
+    }
+}

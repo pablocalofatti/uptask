@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header
+    body.login
+        .contenedor-formulario
+            h1 Start Session
+            if error    
+                p.alerta.error= error
+            if locals.messages
+                .alertas
+                    each categories in Object.keys(locals.messages)
+                        each err in messages[categories]
+                            .alerta(class=`${categories}`)
+                                p= err
+              
+            form#form.caja.caja-login(method="POST" action="/start-session")
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" name="email" placeholder="Your Email" value= email required)  
+                .campo
+                    label(for="password") Password:
+                    input(type="password" name="password" placeholder="Your Password" value= password required)
+                .campo.enviar
+                    input.boton(type="submit" value=" Start Session")
+                .campo.acciones
+                    a(href="/create-account") You do not have an account yet?
+                    a(href="/reestablish") You forgot your password?
+             
