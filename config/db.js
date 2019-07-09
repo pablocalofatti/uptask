@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 // Option 1: Passing parameters separately
-const db = new Sequelize('todolistnode', 'root', '!@aA12345', {
+const db = new Sequelize('todolistnode', 'your user', 'your pass', {
     host: 'localhost',
     dialect: 'mysql',
     port: '3306',
