@@ -38,6 +38,6 @@
     },
     "devDependencies": {
         "nodemon": "^1.19.1",
-        "webpack-cli": "^3.3.5"
+        "webpack-cli": "^3.3.12"
     }
 }
